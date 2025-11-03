@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero3D from './components/Hero3D';
+import APYShowcase from './components/APYShowcase';
+import StakingCalculator from './components/StakingCalculator';
+import PonzziGameTeaser from './components/PonzziGameTeaser';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-gray-900">
+      <Hero3D />
+      <APYShowcase />
+      <StakingCalculator />
+      <PonzziGameTeaser />
+      <footer className="border-t border-gray-200/80 py-10">
+        <div className="mx-auto w-full max-w-6xl px-6 flex flex-col items-center gap-3 text-center">
+          <div className="text-sm text-gray-600">
+            © {new Date().getFullYear()} HIGH Protocol. All rights reserved.
+          </div>
+          <div className="text-xs text-gray-500">
+            This interface is for demonstration only. Staking and game actions require on-chain contracts and wallet connection.
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
